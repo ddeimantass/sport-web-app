@@ -1,0 +1,55 @@
+body{margin-bottom: 50px}
+.page-header{
+	margin-top: 0;
+	background-color: #008fd5;
+	color: #fff;
+	border-radius: 15px;
+}
+.page-header h1{text-align: center;}
+nav.topNav{background: #008fd5;}
+nav.topNav li a{color: white !important;}
+.panel-body{
+	padding-top: 0;
+    margin: 10px 0;
+}
+.panel.panel-default{
+    border: 0;
+    margin-top: 25px;
+}
+.IamHere{background-color:  #dddddd;}
+ul.nav.navbar-nav li:hover{background-color:  #dddddd;}
+i.fa{
+	font-size: 25px;
+	margin-right: 10px;
+}
+
+#matches, #teams{
+    width: 100%;
+    font-size: 20px;
+}
+table tr th:last-child, table tr td:last-child{text-align: center;}
+table tr td, table tr th{
+    padding: 5px;
+    color: #5f6777;
+} 
+#matches tr th{cursor: pointer;}
+table tr:hover td{
+    background: #7a828D;
+    color: white;
+} 
+table {border-collapse: collapse;}
+table td {
+    border-top: 1px solid #d5d8d9;
+    border-bottom: 1px solid #d5d8d9;
+}
+table tr:first-child th {border-top: 0;}
+table tr:last-child td {border-bottom: 0;}
+table tr td:first-child,table tr th:first-child {border-left: 0;}
+table tr td:last-child,table tr th:last-child {border-right: 0;}
+.fa-sort-amount-desc, .fa-sort-amount-asc{display: none;}
+#matches th.desc .fa-sort-amount-desc{display: inline-block;}
+#matches th.asc .fa-sort-amount-asc{display: inline-block;}
+table i.fa{
+	font-size: 20px;
+	margin: 0;
+}
