@@ -69,7 +69,7 @@ function multiSubSort(table, num){
                 if(mv1 == mv2 && arraysEqual(sv1, sv2)){
                     v1 = $(cells[i]).text().toLowerCase();
                     v2 = $(cells[i+1]).text().toLowerCase();
-                    if (table.find(".sub1").hasClass("asc"))
+                    if (table.find(".sub"+num).hasClass("asc"))
                         needSwitch = asc(v1, v2);
                     else
                         needSwitch = desc(v1, v2);
