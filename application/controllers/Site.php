@@ -11,9 +11,6 @@ class Site extends CI_Controller {
         $eachTeamId = array();
         $matches = $this->sport_model->get_matches();
         if($matches){
-            usort($matches, function($a, $b) {
-                return $a['date'] <=> $b['date'];
-            });
             foreach($matches as $match){
                 if(is_numeric( $match["teamAId"] ) && !in_array($match["teamAId"], $eachTeamId) )
                     $eachTeamId[] = $match["teamAId"];

@@ -8,7 +8,7 @@
                 </div>
                 <table id="matches">
                     <thead>
-                        <th id="date" class="asc">Date <i class="fa fa-sort-amount-asc" aria-hidden="true"></i><i class="fa fa-sort-amount-desc" aria-hidden="true"></i></th>
+                        <th id="date">Date <i class="fa fa-sort-amount-asc" aria-hidden="true"></i><i class="fa fa-sort-amount-desc" aria-hidden="true"></i></th>
                         <th id="teamA">Team A <i class="fa fa-sort-amount-asc" aria-hidden="true"></i><i class="fa fa-sort-amount-desc" aria-hidden="true"></i></th>
                         <th id="teamB">Team B <i class="fa fa-sort-amount-asc" aria-hidden="true"></i><i class="fa fa-sort-amount-desc" aria-hidden="true"></i></th>
                         <th id="score">Score <i class="fa fa-sort-amount-asc" aria-hidden="true"></i><i class="fa fa-sort-amount-desc" aria-hidden="true"></i></th>
