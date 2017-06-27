@@ -50,8 +50,12 @@ function multiSubSort(table, num){
         var subColumn = [];
         var subCells = [];
         for(var i = 1; i < num ; i++){
+            var tempCells = [];
             subColumn.push(table.find("th").index($("th.sub"+i)));
-            subCells.push(table.find("tr td:nth-child("+(subColumn[i-1]+1)+")"));
+            table.find("tr td:nth-child("+(subColumn[i-1]+1)+")").each(function(){
+                tempCells.push($(this));
+            });
+            subCells.push(tempCells);
         }
         do{
             var cells = table.find("tr td:nth-child("+(column + 1)+")");
@@ -63,8 +67,8 @@ function multiSubSort(table, num){
                 sv1 = [];
                 sv2 = [];
                 for(var j = 1; j < num ; j++){
-                    sv1.push($(subCells[i]).text().toLowerCase());
-                    sv2.push($(subCells[i+1]).text().toLowerCase());
+                    sv1.push($(subCells[j-1][i]).text().toLowerCase());
+                    sv2.push($(subCells[j-1][i+1]).text().toLowerCase());
                 }
                 if(mv1 == mv2 && arraysEqual(sv1, sv2)){
                     v1 = $(cells[i]).text().toLowerCase();
