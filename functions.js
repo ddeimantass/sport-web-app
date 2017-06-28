@@ -91,37 +91,6 @@ function multiSubSort(table, num){
        multiSubSort(table , (num + 1))
     }
 }
-function subSort(table, column){
-    var rows = table.find("tr");
-    var mainColumn = table.find("th").index($("th.main"));
-    var mainCells = table.find("tr td:nth-child("+(mainColumn+1)+")");
-    do{
-        var cells = table.find("tr td:nth-child("+(column + 1)+")");
-        var switched = false;
-        for (var i = 0; i < (cells.length - 1); i++) {
-            var needSwitch = false;
-            mv1 = $(mainCells[i]).text().toLowerCase();
-            mv2 = $(mainCells[i+1]).text().toLowerCase();
-            if(mv1 == mv2){
-                v1 = $(cells[i]).text().toLowerCase();
-                v2 = $(cells[i+1]).text().toLowerCase();
-                if (table.find(".sub1").hasClass("asc"))
-                    needSwitch = asc(v1, v2);
-                else
-                    needSwitch = desc(v1, v2);
-            }
-            if (needSwitch) {
-                v1 = $(rows[i+1]).html();
-                $(rows[i+1]).html($(rows[i+2]).html());
-                $(rows[i+2]).html(v1)
-                switched = true;
-            }
-        }
-    }while(switched);
-    if(2 < table.find("th").length){
-       multiSubSort(table , 2)
-    }
-}
 function mainSort(table, column){
     var rows = table.find("tr");
     do{
@@ -144,32 +113,27 @@ function mainSort(table, column){
         }
     }while(switched);
     if(table.find("th.sub1").length != 0){
-        multiColumnSort(table.find("th.sub1"), false);
+        multiSubSort(table , 1);
     }
 }
-function multiColumnSort(head, main){
+function multiColumnSort(head){
     var table = head.parents("table");
     var column = table.find("th").index(head);
-    if(main && head.hasClass("asc")){
+    if(head.hasClass("asc")){
         head.removeClass("asc");
         head.addClass("desc");
     }
-    else if(main){
+    else{
         head.removeClass("desc");
         head.addClass("asc");
     }
-    if(main && !head.hasClass("main")){
+    if(!head.hasClass("main")){
         changeMain(column, table)
     }
-    if(main){
-        mainSort(table, column);
-    }
-    else{
-        subSort(table, column);
-    }
+    mainSort(table, column);
 }
 $(document).ready(function(){
     $("#matches th").click(function(){
-        multiColumnSort($(this), true);
+        multiColumnSort($(this));
     });
 });
